@@ -10,7 +10,8 @@ const port = argument.port || 5000;
 const app = express();
 
 
-// API methods
+// API methods - used https://reflectoring.io/express-middleware/ and 
+// https://www.tutorialspoint.com/expressjs/expressjs_middleware.htm for help
 
 app.use(express.json());
 
