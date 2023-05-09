@@ -11,7 +11,7 @@ const app = express();
 
 
 // API methods - used https://reflectoring.io/express-middleware/ and 
-// https://www.tutorialspoint.com/expressjs/expressjs_middleware.htm for help
+// https://www.tutorialspoint.com/expressjs/expressjs_middleware.htm
 
 app.use(express.json());
 
