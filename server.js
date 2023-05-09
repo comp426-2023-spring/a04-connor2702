@@ -18,56 +18,46 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app', (req, res, next) => {
-    res.json({'message': '200 OK'});
-    res.status(200);
+    res.status(200).send('200 OK');
 });
 
 app.get('/app/rps', (req, res, next) => {
-    res.json(rps());
-    res.status(200);
+    res.status(200).json(rps());
 });
 
 app.get('/app/rpsls', (req, res, next) => {
-    res.json(rpsls());
-    res.status(200);
+    res.status(200).json(rpsls());
 });
 
 app.get('/app/rps/play', (req, res, next) => {
-    res.json(rps(req.query.shot));
-    res.status(200);
+    res.status(200).json(rps(req.query.shot));
 
 });
 
 app.get('/app/rpsls/play', (req, res, next) => {
-    res.json(rpsls(req.query.shot));
-    res.status(200);
+    res.status(200).json(rpsls(req.query.shot));
 
 });
 
 app.post('/app/rps/play', (req, res, next) => {
-    res.json(rps(req.body.shot));
-    res.status(200);
+    res.status(200).json(rps(req.body.shot));
 
 });
 
 app.post('/app/rpsls/play', (req, res, next) => {
-    res.json(rpsls(req.body.shot));
-    res.status(200);
+    res.status(200).json(rpsls(req.body.shot));
 });
 
 app.get('/app/rps/play/:shot', (req, res, next) => {
-    res.json(rps(req.params.shot));
-    res.status(200);
+    res.status(200).json(rps(req.params.shot));
 });
 
 app.get('/app/rpsls/play/:shot', (req, res, next) => {
-    res.json(rpsls(req.params.shot));
-    res.status(200);
+    res.status(200).json(rpsls(req.params.shot));
 });
 
 app.all('*', (req, res, next) => {
-    res.json({'message': '404 NOT FOUND'});
-    res.status(404);
+    res.status(404).send('404 NOT FOUND');
 });
 
 const server = app.listen(port, () => {
