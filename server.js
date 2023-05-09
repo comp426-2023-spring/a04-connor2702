@@ -17,10 +17,6 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: true}));
 
-const server = app.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
-});
-
 app.get('/app', (req, res, next) => {
     res.json({'message': '200 OK'});
     res.status(200);
@@ -72,4 +68,8 @@ app.get('/app/rpsls/play/:shot', (req, res, next) => {
 app.all('*', (req, res, next) => {
     res.json({'message': '404 NOT FOUND'});
     res.status(404);
+});
+
+const server = app.listen(port, () => {
+    console.log(`Server listening on port ${port}`)
 });
